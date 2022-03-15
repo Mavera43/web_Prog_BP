@@ -1,47 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Php Sabitler, Değişkenler, Karar yapıları</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
+<html>
+    <head>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
-<body> 
-<div  class="container ">
-  <h2>Formlar ve form verileri ile çalışma </h2>
-  <!-- sayfalar arası veri geçişi, yapabilmek için
-      html form elementi ve input elementlerini
-        kullanmak gerekiyor.
-        php sayfalar arsında verileri taşıyan
-        $_POST ve $_GET isimli 2 tane süper global değişken 
-        vardır.-->
-
-        <?php
-        $durum="";
-            //$_POST  array/dizi
-          /* echo @$_POST["username"]."<br>";
-           echo @$_POST["password"]."<br>";
-           if(isset($_POST["username"]))
-             echo $_POST["username"]."<br>";*/
+<body>
+<?php
+    if($_POST)
         if($_POST["username"]=="ahmet" && $_POST["password"]=="1234")
-            $durum="Oturum Açıldı";
+            $str="Oturum Açıldı...Hoşgeldiniz Ahmet Bey";
             else
-            header("refresh:1;url=hata.php");  
-        ?>
+            $str="Oturum açılamadı. Kullanıcı adınız veya şifreniz yanliş";
+         ?>
+<div class="container">
+  <h2>PHP Karar Kontrol yapıları (mantıksal kontroller)</h2>
   <div class="card">
-    <div class="card-header">
-        <?=$durum?>
-    </div>
-    <div class="card-body bg-light">
+  <h5 class="card-title"><?php echo (isset($str)) ?  $str : ""?></h5>
+    <div class="card-header bg-primary"></div>
+    <div class="card-body bg-light"><br><br> <p class="card-text">  
+        
 
-    </div>
-    <div class="card-footer bg-info  "></div>
+ 
+</p><br><br></div> 
+    <div class="card-footer bg-primary"></div>
   </div>
 </div>
-
 </body>
 </html>

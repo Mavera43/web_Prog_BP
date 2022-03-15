@@ -1,20 +1,33 @@
 <?php
 
-echo "<h3> Get metodu ile gelen verilere erişim...</h3>";
+echo "<h2> Action_page sayfası...</h2>";
+echo "<h4>Gelen Veriler....</h4>";
 echo "<pre>";
-var_dump($_POST);
+print_r($_POST);
 echo "</pre>";
+
+
 echo "<hr>";
-echo "Sayfadan gelen Ad Soyad ".$_POST["adsoyad"]."<br>";
-echo "Sayfadan gelen il ".$_POST["il"]."<br>";
 
-$varmı=isset($_POST["hatirla"]);
-if ($varmı)
-  echo "Sayfadan gelen hatırla 1 veya 0 mı ".$_POST["hatirla"]."<br>";
-
-if($varmı && $_POST["hatirla"]=="1")
-    echo "Seni hatırlayacağım";
-    else
-    echo "Seni unuttum";
-
+    echo "Seçilen Dİller: <br>";
+    echo "<pre>";
+    $varmi=isset($_POST["dil"]);
+    if ($varmi){
+        print_r($_POST["dil"]);
+    echo "</pre>";
+    echo "---------------<br>";
     
+    foreach ($_POST["dil"] as $key => $value) {
+         echo "$value.<br>";
+    }
+    echo "ilk eleman : ".$_POST["dil"][0]."<br>";
+
+    echo "Seçtiğiniz dil sayısı :".count($_POST["dil"]);
+
+    }
+    else
+    echo " Seçili bir dil yoktur...";
+
+echo "<hr>";
+echo $_POST["yeni"];
+?>

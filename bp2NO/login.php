@@ -1,58 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Php Sabitler, Değişkenler, Karar yapıları</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
+<?php
+include "library.php";
+?><html>
+    <head>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
-<body> 
-<div  class="container ">
-  <h2>Formlar ve form verileri ile çalışma </h2>
-  <!-- sayfalar arası veri geçişi, yapabilmek için
-      html form elementi ve input elementlerini
-        kullanmak gerekiyor.
-        php sayfalar arsında verileri taşıyan
-        $_POST ve $_GET isimli 2 tane süper global değişken 
-        vardır.-->
+<body>
+
+
+<div class="container">
+  <h2>Oturum Açma Ekranı</h2>
   <div class="card">
-    <div class="card-header">
-        Oturum Açma Ekranı
-    </div>
-    <div class="card-body bg-light">
-        <form name="frmLogin" method="post"
-        action="index.php">
-        <label for="username" >Kullanıcı Adı </label>
-        <br>
-        <input type="text" name="username" 
-        placeholder="kullanıcı adı girilmeli">
-        <br>
-        <label for="password" >Şifre </label>
-        <br>
-        <input type="password" name="password">
-        <br>
-        <input type=submit name="btnGonder" value="Oturum Aç">
-        </form>
-    <?php
-        
-    ?>
+  <h5 class="card-title">Öğr.Gör.Şenol DEMİRCİ</h5>
+    <div class="card-header bg-primary"></div>
+    <div class="card-body bg-light text-center "><br><br> <p class="card-text">  
+    <form name="loginform" method="post" action="index.php" >
+    <label for="username" >Kullanıcı Adı</label>
+    <br>
+    <input type=text name="username" value="ahmet" placeholder="Kullanıcı adı ...">
+    <br>
+    <label for="password" >Şifre </label>
+    <br>
+    <input type="password" name="password" value="1234" placeholder="şifre ?">
+    <br>
+    <input type=submit value="OturumAç" name="btnLogin">
+    <br>
+    <div style="widht:100px;height:auto;background-color:gray;margin:50px 100px 100px 100px;text-align:left">
+    <br>
+    <input type = "checkbox" name=language[] value="C#" >C#
+    <br>
+    <input type = "checkbox" name=language[] value="Php">Php
+    <br>
+    <input type = "checkbox" name=language[] value="Pyton">Pyton
+    
+</div>
    
+</form>
 
-    <?php 
-
- 
-       
-
-
-    ?>       
+</p><br><br></div> 
+    <div class="card-footer bg-primary">
+    <?=$footer?>
     </div>
-    <div class="card-footer bg-info  "></div>
   </div>
 </div>
-
 </body>
 </html>
+

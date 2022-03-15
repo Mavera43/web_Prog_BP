@@ -1,42 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Php Sabitler, Değişkenler, Karar yapıları</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
+<html>
+    <head>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
-<body> 
-<div  class="container ">
-  <h2>kARAr Yapıları (if else -- if elseif </h2>
+<body>
+
+
+<div class="container">
+  <h2>PHP Karar Kontrol yapıları (mantıksal kontroller)</h2>
   <div class="card">
-    <div class="card-header">
-        Öğr.Gör.Şenol DEMİRCİ
-    </div>
-    <div class="card-body bg-light">
-    <?php 
-    $kilo=55;
-    $boy=1.75;
-    $vki=$kilo/(pow($boy,2));
-    if($vki<18)
-        echo "Zayıfsınız...";
-    else if($vki>=18 && $vki<25)
-        echo "Normal kilodasınız..";
-    else if($vki>=25 && $vki<30)
-        echo "Kilosunuz...";
-    else if($vki>=30 && $vki<35)
-        echo "obezsiniz...";
-    else   echo "Aşırı obezsiniz...";
-         
-    ?>       
-    </div>
-    <div class="card-footer bg-info  "></div>
+  <h5 class="card-title">Öğr.Gör.Şenol DEMİRCİ</h5>
+    <div class="card-header bg-primary"></div>
+    <div class="card-body bg-light"><br><br> <p class="card-text">  
+        <?php
+    $username="ahmet";
+    $password="12334";
+    if($username=="ahmet" && $password=="1234")
+        header("refresh:1;url=index.php");
+       // echo "Kullanıcı adı ve şifre<span style=font-weight:bold;color:green>doğru</span>";
+        else
+        header("refresh:1;url=hata.php");
+      //  echo "Kullanıcı adı ve şifre<span style=font-weight:bolder;color:red>yanlış</span>";
+?>
+</p><br><br></div> 
+    <div class="card-footer bg-primary"></div>
   </div>
 </div>
-
 </body>
 </html>

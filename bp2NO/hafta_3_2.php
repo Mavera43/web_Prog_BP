@@ -1,46 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Php Sabitler, Değişkenler, Karar yapıları</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
+<html>
+    <head>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
-<body> 
-<div  class="container ">
-  <h2>kARAr Yapıları (if else -- if elseif </h2>
+<body>
+
+
+<div class="container">
+  <h2>PHP Karar Kontrol yapıları (mantıksal kontroller)</h2>
   <div class="card">
-    <div class="card-header">
-        Öğr.Gör.Şenol DEMİRCİ
-    </div>
-    <div class="card-body bg-light">
-    <?php 
-    $yil=2029;
-    $kosul1=($yil % 400 == 0);
-    $kosul2=($yil % 100 !=0 && $yil % 4==0);
-    $renk="black";
-    $kosul = ($kosul1 || $kosul2);
- // if($kosul) $renk="blue";else $renk="magenta";
-    $renk = ($kosul) ? "blue" : "red" ;
-    if($kosul)
-        echo "<p>Girdiğiniz yıl
-    <span style=\"font-weight:bolder;color:$renk\">
-    artık yıldır. </span></p>";
+  <h5 class="card-title">Öğr.Gör.Şenol DEMİRCİ</h5>
+    <div class="card-header bg-primary"></div>
+    <div class="card-body bg-light"><br><br> <p class="card-text">  
+        <?php
+    $yil=2021;
+    $kosul1 = ($yil % 400==0); //false; 
+    $kosul2= ($yil % 100<>0) && ($yil % 4==0); 
+    $kosul = ($kosul1 ||$kosul2);
+
+    $renk = ($kosul) ? "green" : "red";
+    echo "<br>".$renk."<br>";
+     if($kosul) 
+        echo "<p style=color:$renk>Artık Yıl</p>";   //yeşil renkli yazdırın
         else
-    echo "<p>Girdiğiniz yıl 
-    <span style=\"font-weight:bolder;color:$renk\">
-    artık yıl değildir.</span></p>";
+        echo "<p style=color:$renk>Artık yıl değil</p>";  //kırmızı renkli yazdırın
 
-
-    ?>       
-    </div>
-    <div class="card-footer bg-info  "></div>
+?>
+</p><br><br></div> 
+    <div class="card-footer bg-primary"></div>
   </div>
 </div>
-
 </body>
 </html>
