@@ -37,7 +37,7 @@ class db{
         }     
     }
 
-    function insertRecord($sqlString){
+    function insertRecord($sqlString, $sqlParams=[]){
        // try {
             $sorgu = $this->conn->prepare($sqlString);
             $sorgu->execute();
