@@ -36,33 +36,32 @@ class db{
             throw new PDOException($e->getMessage());
         }     
     }
-
-    function insertRecord($sqlString, $sqlParams=[]){
-       // try {
-            $sorgu = $this->conn->prepare($sqlString);
-            $sorgu->execute();
-            //$lastInsertId=$this->conn->lastInsertId();
-            //return $lastInsertId;
-             if($sorgu)
-                return true;
-            else
-                return false; 
-      //  } catch (PDOException $e) {
-     //       echo ("classdan hata : ".$e->getMessage());
-     //   }     
-    }
-
     function getRecord($sqlString, $method="PDO::FETCH_ASSOC", $sqlParams=[]){
         try {
             $sorgu = $this->conn->prepare($sqlString);
             $sorgu->execute($sqlParams);
             $result=$sorgu->fetch($method);
-            $result->rowCount  = $sorgu->rowCount();    //bulunan kayıt sayısını result dizisine ekle
             return $result;
         } catch (PDOException $e) {
             throw new PDOException($e->getMessage());
         }        
     }
+
+   
+
+    function insertRecord($sqlString, $sqlParams=[]){
+        try {
+            $sorgu = $this->conn->prepare($sqlString);
+            $sorgu->execute($sqlParams);
+             $lastInsertId=$this->conn->lastInsertId();
+             return $lastInsertId;
+              
+         } catch (PDOException $e) {
+             echo ("classdan hata : ".$e->getMessage());
+        }     
+    }
+
+   
     function getHtmlTable($sqlString, $method="PDO::FETCH_ASSOC", $sqlParams=[]){
        $result = $this->getRecordAll($sqlString, $method, $sqlParams);
         $htmlContent='  <table class="table">
